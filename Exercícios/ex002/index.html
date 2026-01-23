@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício da apostila</title>
+    <style>
+        body {
+            font: arial 2em;
+        }
+
+        button {
+            font-size: 2em;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0px 1px 6px black;
+        }
+
+        button:hover {
+            background-color: grey;
+            color: white;
+            cursor: pointer;
+            transition: background-color .5s;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Interagindo com um botão</h1>
+    <button onclick="clicou()">Clica em mim!</button>
+    <script>
+        function clicou() {
+            alert('Você clicaou no botão!')
+        }
+    </script>
+</body>
+
+</html>
