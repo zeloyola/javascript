@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números em JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        button {
+            padding: 30px;
+            margin: 5px;
+            font-size: 1.5em;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.616);
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Vários cálculos em JS</h1>
+    <button onclick="clicou()">Clique para calcular</button>
+    <section id="tela">
+        <p>O resultado irá aparecer aqui...</p>
+    </section>
+    <!-- <hr> -->
+
+    <script>
+        function clicou() {
+            let valor = prompt('Digite um número:')
+            let inteiro = Number.parseInt(valor)
+            let proximo = Math.ceil(valor)
+            let raiz2 = Math.sqrt(valor)
+            let raiz3 = Math.cbrt(valor)
+            let pont2 = valor ** 2
+            let pont3 = valor ** 3
+            let res = document.querySelector('section#tela')
+            
+            res.innerHTML = (`<p>O números a ser analisado aqui será o ${valor}</p> <hr>`)
+            res.innerHTML += (`<p>O seu valor absoluto é ${valor}</p>`)
+            res.innerHTML += (`<p>A sua parte interira é ${inteiro}</p>`)
+            res.innerHTML += (`<p>O valor inteiro mais próximo é ${proximo}</p>`)
+            res.innerHTML += (`<p>A sua raiz quadrada é ${raiz2}</p>`)
+            res.innerHTML += (`<p>A sua raiz cúbisa é ${raiz3}</p>`)
+            res.innerHTML += (`<p>O valor de ${valor}<sup>2</sup> é ${pont2}</p>`)
+            res.innerHTML += (`<p>O valor de ${valor}<sup>3</sup> é ${pont3}</p>`)
+        }
+    </script>
+</body>
+
+</html>

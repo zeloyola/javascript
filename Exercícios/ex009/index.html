@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de cliques</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Momo+Signature&display=swap');
+
+        h1 {
+            font-family: Momo Signature;
+        }
+
+        p {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1em;
+        }
+
+        button {
+            padding: 30px;
+            margin: 5px;
+            font-size: 1.5em;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.616);
+            cursor: pointer;
+        }
+
+        #return{
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Contador de cliques</h1>
+    <button onclick="clicou()">Clique em mim</button>
+    <button onclick="zerar()">Zerar o contador</button>
+    <section>
+        <p>O contador está com <span id="return">0</span> cliques.</p>
+    </section>
+
+    <script>
+        let num = 0
+        let res = document.getElementById('return')
+        function clicou() {
+            num = num + 1
+            res.innerHTML = num
+            // console.log(num)
+        }
+
+        function zerar() {
+            num = 0
+            res.innerHTML = num
+
+        }
+    </script>
+</body>
+
+</html>

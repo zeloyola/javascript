@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números com JavaScript</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        button{
+            padding: 30px;
+            margin: 5px;
+            font-size: 1.5em;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.616);
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        Somando dois números
+    </h1>
+    <button onclick="iniciar()">
+        Iniciar a soma
+    </button>
+    <section id="tela">
+        <p>
+            O resultado vem aqui...
+        </p>
+    </section>
+
+    <script>
+        function iniciar(){
+            let n1 = Number(prompt('Digite um número:'))
+            let n2 = Number(prompt('Digite outro número:'))
+            let resultado = (`${n1 + n2}`)
+            let res = document.getElementById('tela')
+            res.innerHTML = (`<p>A soma entre ${n1} e ${n2} é igual a <strong>${resultado}</strong></p>`)
+        }
+    </script>
+</body>
+</html>
