@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor R$ -> US$</title>
+</head>
+
+<body>
+    <h1>Cnversor R$ -> US$</h1>
+    <button onclick="iniciarConversao()">Converter</button>
+    <section id="resultado">
+        <p>Clique no botão acima para iniciar.</p>
+    </section>
+
+    <script>
+        let valorDolar = 5.2//Number(prompt('Antes de mais nada. Quanto está a cotação do dólar agora?'))
+
+        function iniciarConversao() {
+            let valorReal = Number(prompt('Quanros R$ você tem na Carteira?'))
+            let valornaCarteiraemDolares = valorReal / valorDolar
+            // console.log(valornaCarteiraemDolares)
+
+            let res = document.querySelector('#resultado')
+            res.innerHTML = (`<p>O valor que você possui em dolares é de ${valornaCarteiraemDolares.toLocaleString('pt-br',{style:'currency',currency:'USD'})}</p>`)
+        }
+
+
+        // function pegarValorEmReais(){
+        //     let valorReal = Number(prompt('Quanros R$ você tem na Carteira?'))
+        //     return valorReal
+        // }
+
+        // function converterParaDolar(reais){
+        //     return reais * valorDolar
+        // }
+
+        // const reaisasljnasjf = pegarValorEmReais()
+        // const valorEmDolar = converterParaDolar(reaisasljnasjf)
+        // console.log(valorEmDolar)
+
+    </script>
+</body>
+
+</html>

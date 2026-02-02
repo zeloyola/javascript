@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reajuste salário</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        button {
+            padding: 20px;
+            margin: 5px;
+            font-size: 1em;
+            border-radius: 50px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.225);
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Reajuste Salarial</h1>
+    <button onclick="iniciarReajuste()">Reajusatar Salário</button>
+    <section id="resultado">
+        <p>Clique no botão acima para iniciar.</p>
+    </section>
+
+    <script>
+        function iniciarReajuste() {
+            let nomeFuncionario = prompt('Qual é o nome do funcionário?')
+            let salario = Number(prompt(`Qual é o salário de ${nomeFuncionario}`))
+            let porcetagemParaAumentoSalarial = Number(prompt(`O salário de ${nomeFuncionario} vai ser reajustado em qual portecentagem?`))
+            let reajuste = (salario * porcetagemParaAumentoSalarial) / 100
+            let novoSalario = reajuste + salario
+
+            let res = document.querySelector('#resultado')
+            res.innerHTML = (`<p><strong>${nomeFuncionario} recebeu um aumento salarial!</strong></p>`)
+            res.innerHTML += (`<p>O salário atual era ${formatarParaMonetario(salario)}.</p>`)
+            res.innerHTML += (`<p>Com um aumento de ${porcetagemParaAumentoSalarial}%, o salário vai aumentar ${formatarParaMonetario(reajuste)} no próximo mês.</p>`)
+            res.innerHTML += (`<p>E a partir daí, ${nomeFuncionario} vai passar a ganhar ${formatarParaMonetario(novoSalario)}</p>`)
+
+
+        }
+
+        function formatarParaMonetario(valor) {
+            return valor.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })
+        }
+
+    </script>
+</body>
+
+</html>
