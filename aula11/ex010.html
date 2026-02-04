@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo das Multas</title>
+</head>
+
+<body>
+    <H1>Sistema de Multas</H1>
+    Velocidade do carro: <input type="number" name="velocidade" id="velocidade"> Km/h
+    <input type="button" value="verificar" onclick="calcular()">
+    <section id="resultado">
+        <p>Insira a velocidade do seu carro acima...</p>
+    </section>
+    <script>
+        function calcular() {
+            let vel = document.querySelector('#velocidade')
+            let res = document.querySelector('#resultado')
+            let velTotal = Number(vel.value)
+
+            res.innerHTML = (`<p>Sua velocidade atual é de <strong>${velTotal} Km/h</strong></p>`)
+            if (velTotal > 60) {
+                res.innerHTML += (`Sua velocidade foi maior 60 Km/h. VOCÊ ESTÁ SENDO MULTADO!`)
+            }
+            res.innerHTML += (`<p>Dirija sempre com cuidado!</p>`)
+        }
+    </script>
+</body>
+
+</html>

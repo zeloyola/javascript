@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alfandega</title>
+</head>
+<body>
+    <h1>Alfandega</h1>
+    Insira o seu País de origem: <input type="text" name="paisOrigem" id="paisOrigem">
+    <input type="button" value="verificar" onclick="iniciarVerificacao()">
+    <section id="resultado">
+
+    </section>
+
+    <script>
+        function iniciarVerificacao() {
+            let pais = document.querySelector('#paisOrigem')
+            let nomePais = pais.value
+            let res = document.querySelector('#resultado')
+            
+            res.innerHTML = (`<p>O seu país de origem é o <strong>${nomePais}</strong>.</p>`)
+            if (nomePais != 'Brasil'){
+                res.innerHTML += (`Você é Estrangeiro!`)
+            } else {
+                res.innerHTML += (`Você é Brasileiro!`)
+            }
+        }
+    </script>
+</body>
+</html>
